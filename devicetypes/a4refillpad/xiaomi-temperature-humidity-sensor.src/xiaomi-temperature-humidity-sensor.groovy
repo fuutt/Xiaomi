@@ -249,7 +249,7 @@ private String parseCatchAllMessage(String description) {
 	if (cluster) {
 		switch(cluster.clusterId) {
 			case 0x0000:
-			result = getBatteryResult(cluster.data.get(6)) 
+			result = getBatteryResult(cluster.data.get(23)) 
  			break
 		}
 	}
@@ -270,8 +270,8 @@ private String getBatteryResult(rawValue) {
 	if (battLevel > maxBatt) {
 				battLevel = maxBatt
     }
-
-	return battLevel
+	return rawValue
+	//return battLevel
 }
 
 def refresh() {
